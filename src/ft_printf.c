@@ -12,35 +12,44 @@
 
 #include <ft_printf.h>
 
-void			ft_printf(const char* str, ...)
+int				ft_printf(const char * restrict format, ...)
 {
 	va_list		ap;
+	int			i;
 
-	va_start(ap, str);
-	ft_vprintf(str, ap);
+	i = 0;
+	va_start(ap, format);
+	i += ft_vprintf(format, ap);
 	va_end(ap);
+	return (i);
 }
 
-void			ft_vprintf(const char* str, va_list ap)
+int				ft_vprintf(const char* str, va_list ap)
 {
+	int			i;
+
+	i = 0;
 	while (*str)
 	{
 		if (*str == '%')
 		{
 			str++;
 			if (*str == '%')
-				ft_putchar('%');
+				i += ft_putchar('%');
 			else if (*str == 'c')
-				ft_putchar(va_arg(ap, int));
+				i += ft_putchar(va_arg(ap, int));
 			else if (*str == 's')
-				ft_putstr(va_arg(ap, char*));
+				i += ft_putstr(va_arg(ap, char*));
 			else if (*str == 'd')
-				ft_putnbr(va_arg(ap, int));
+				i += ft_putnbr(va_arg(ap, int));
 			else if (*str == 'f')
-				ft_putdouble(va_arg(ap, double));
+				i += ft_putdouble(va_arg(ap, double));
+			else if (*str == 'p')
+				i += ft_putpointer(/* faire fonction et verifier si il faut utiliser va_arg */);
 		}
 		else
-			ft_putchar(*str);
+			i += ft_putchar(*str);
 		str++;
 	}
+	return (i);
 }

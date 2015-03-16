@@ -12,7 +12,7 @@
 
 #include <ft_printf.h>
 
-void	ft_putdouble(double d)
+int		ft_putdouble(double d)
 {
-	ft_putdouble_fd(d, 1);
+	return (ft_putdouble_fd(d, 1));
 }

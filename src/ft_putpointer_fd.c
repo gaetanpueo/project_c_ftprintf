@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putpointer_fd.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpueo--g <gpueo--g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,17 +12,7 @@
 
 #include <ft_printf.h>
 
-int		ft_putstr_fd(char const *s, int fd)
+int		ft_putpointer_fd(/* arguments de ft_putpointer() */, int fd)
 {
-	int	i;
-
-	i = 0;
-	if (!s)
-		return (ft_putstr_fd("(null)", fd));
-	while (*s)
-	{
-		i += ft_putchar_fd(*s, fd);
-		s++;
-	}
-	return (i);
+	/* coder la fonction */
 }

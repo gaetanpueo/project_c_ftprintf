@@ -10,7 +10,7 @@
 #                                                                              #
 #******************************************************************************#
 
-BDIR	=	bin/
+BDIR	=	
 SDIR	=	src/
 ODIR	=	obj/
 HDIR	=	inc/
@@ -27,6 +27,8 @@ SRCS	=	ft_count_digits.c \
 			ft_putdouble_fd.c \
 			ft_putnbr.c \
 			ft_putnbr_fd.c \
+			ft_putpointer.c \
+			ft_putpointer_fd.c \
 			ft_putstr.c \
 			ft_putstr_fd.c \
 			ft_strnew.c
