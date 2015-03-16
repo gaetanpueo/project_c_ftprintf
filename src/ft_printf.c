@@ -11,3 +11,36 @@
 /* ************************************************************************** */
 
 #include <ft_printf.h>
+
+void			ft_printf(const char* str, ...)
+{
+	va_list		ap;
+
+	va_start(ap, str);
+	ft_vprintf(str, ap);
+	va_end(ap);
+}
+
+void			ft_vprintf(const char* str, va_list ap)
+{
+	while (*str)
+	{
+		if (*str == '%')
+		{
+			str++;
+			if (*str == '%')
+				ft_putchar('%');
+			else if (*str == 'c')
+				ft_putchar(va_arg(ap, int));
+			else if (*str == 's')
+				ft_putstr(va_arg(ap, char*));
+			else if (*str == 'd')
+				ft_putnbr(va_arg(ap, int));
+			else if (*str == 'f')
+				ft_putdouble(va_arg(ap, double));
+		}
+		else
+			ft_putchar(*str);
+		str++;
+	}
+}

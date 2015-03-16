@@ -16,7 +16,20 @@ ODIR	=	obj/
 HDIR	=	inc/
 
 NAME	=	libftprintf.a
-SRCS	=	ft_printf.c
+SRCS	=	ft_count_digits.c \
+			ft_itoa.c \
+			ft_memalloc.c \
+			ft_memset.c \
+			ft_printf.c \
+			ft_putchar.c \
+			ft_putchar_fd.c \
+			ft_putdouble.c \
+			ft_putdouble_fd.c \
+			ft_putnbr.c \
+			ft_putnbr_fd.c \
+			ft_putstr.c \
+			ft_putstr_fd.c \
+			ft_strnew.c
 _OBJS	=	$(SRCS:.c=.o)
 OBJS	=	$(patsubst %,$(ODIR)%,$(_OBJS))
 
@@ -28,7 +41,7 @@ all: scmsg $(NAME)
 	@echo "\n--------------------------------------------------------------------------------"
 
 scmsg:
-	@echo "--------------------------- Start compilation libft ----------------------------\n"
+	@echo "------------------------ Start compilation libftprintf -------------------------\n"
 scemsg:
 	@echo "\033[34;1m>> \033[0mCompilation files ..."
 
@@ -58,7 +71,7 @@ $(ODIR)%.o: $(SDIR)%.c
 	@echo "|\c)"
 
 cleanobj:
-	@echo "----------------------------- Deleting files libft -----------------------------\n"
+	@echo "-------------------------- Deleting files libftprintf --------------------------\n"
 	@echo "\033[34;1m>> \033[0mRemoving object files ...\033[73G\c"
 	@rm -f $(OBJS)
 	@echo "\033[37;1m[\033[34mDone !\033[37m]\033[0m"
