@@ -16,22 +16,7 @@ ODIR	=	obj/
 HDIR	=	inc/
 
 NAME	=	libftprintf.a
-SRCS	=	ft_count_digits.c \
-			ft_itoa.c \
-			ft_memalloc.c \
-			ft_memset.c \
-			ft_printf.c \
-			ft_putchar.c \
-			ft_putchar_fd.c \
-			ft_putdouble.c \
-			ft_putdouble_fd.c \
-			ft_putnbr.c \
-			ft_putnbr_fd.c \
-			ft_putpointer.c \
-			ft_putpointer_fd.c \
-			ft_putstr.c \
-			ft_putstr_fd.c \
-			ft_strnew.c
+SRCS	=	ft_printf.c
 _OBJS	=	$(SRCS:.c=.o)
 OBJS	=	$(patsubst %,$(ODIR)%,$(_OBJS))
 
