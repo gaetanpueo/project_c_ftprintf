@@ -1,8 +1,4 @@
 # README #
 
-Project : ft_printf -> printf();
-
-### Sources ###
-
-* ft_printf.h
-* ft_printf.c
+Project : ft_printf
+Status  : In progress
