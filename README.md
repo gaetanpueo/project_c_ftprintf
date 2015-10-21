@@ -1,4 +1,4 @@
 # README #
 
-Project : ft_printf
+Project : ft_printf  
 Status  : In progress
